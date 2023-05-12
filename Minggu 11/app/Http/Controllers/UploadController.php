@@ -78,11 +78,11 @@ class UploadController extends Controller
     {
         $image = $request->file('file');
         $imageName = time().'.'.$image->extension();
-        $image->move(public_path('img/dropzone'), $imageName); 
+        $image->move(public_path('img/dropzone'), $imageName);
         return response()->json(['success' => $imageName]);
     }
 
-    
+
 
     public function pdf_upload()
     {
@@ -92,7 +92,7 @@ class UploadController extends Controller
     {
         $pdf = $request->file('file');
         $pdfName = 'pdf_'.time().'.'.$pdf->extension();
-        $pdf->move(public_path('pdf/dropzone'), $pdfName); 
+        $pdf->move(public_path('pdf_uplode/dropzone'), $pdfName);
         return response()->json(['success' => $pdfName]);
     }
 

@@ -29,23 +29,23 @@
     <script type="text/javascript">
         Dropzone.autoDiscover = false;
         var myDropzone = new Dropzone('#pdf-upload', {
-            maxFilesize: 1,
+            maxFilesize: 10,
             acceptedFiles: ".pdf",
             addRemoveLinks: true,
             autoProcessQueue: false,
             init: function () {
-                // AKSI KETIKA BUTTON UPLOAD DI KLIK 
-                $("#button").click(function (e) { 
+                // AKSI KETIKA BUTTON UPLOAD DI KLIK
+                $("#button").click(function (e) {
                     e.preventDefault();
-                    myDropzone.processQueue(); 
-            }); 
+                    myDropzone.processQueue();
+            });
             this.on('sending', function (file, xhr, formData) {
-            // Tambahkan semua input form ke formData Dropzone yang akan POST 
+            // Tambahkan semua input form ke formData Dropzone yang akan POST
             var data = $('#pdf-upload').serializeArray();
             $.each(data, function (key, el) {
                 formData.append(el.name, el.value);
             });
-            
+
         });
         }
         });

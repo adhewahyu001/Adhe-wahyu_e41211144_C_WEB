@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//untuk upload 
+//untuk upload
 Route::get('/upload', [UploadController::class, 'upload']);
 Route::post('/proses_upload', [UploadController::class, 'proses_upload']);
 //untuk resize gambar
@@ -26,7 +26,7 @@ Route::Post('/upload/resize', [UploadController::class, 'resize_upload']);
 Route::get('/dropzone', [UploadController::class, 'dropzone']);
 Route::post('/dropzone/store', [UploadController::class, 'dropzone_store']);
 //dropzone pdf
-Route::get('/pdf', [UploadController::class, 'pdf_upload']);
+Route::get('/pdf_upload', [UploadController::class, 'pdf_upload']);
 Route::post('/pdf/store', [UploadController::class, 'pdf_store']);
 
 
